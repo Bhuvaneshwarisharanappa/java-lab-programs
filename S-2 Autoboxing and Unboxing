@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class AverageInternalMarks {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int[] internalMarks = new int[3];
+
+        for (int i = 0; i < 3; i++) {
+            System.out.print("Enter the score of Internal " + (i + 1) + ": ");
+            String input = scanner.nextLine();
+            String[] parts = input.split(" ");
+
+            internalMarks[i] = Integer.parseInt(parts[parts.length - 1]);
+        }
+
+        double sum = 0;
+        for (int mark : internalMarks) {
+            sum += mark;
+        }
+
+        double average = sum / internalMarks.length;
+        System.out.println("The average Internal Score is " + average);
+    }
+}
