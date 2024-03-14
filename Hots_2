@@ -1,0 +1,38 @@
+class Student {
+    String name;
+    int marks;
+
+    public Student(String name, int marks) {
+        this.name = name;
+        this.marks = marks;
+    }
+
+    public String calculateGrade() {
+        if (marks < 40)
+            return "FAIL";
+        else if (marks < 60)
+            return "PASS";
+        else if (marks < 75)
+            return "SECOND CLASS";
+        else if (marks < 90)
+            return "FIRST CLASS";
+        else
+            return "FIRST CLASS WITH DISTINCTION";
+    }
+}
+
+public class StudentGrade {
+    public static void main(String[] args) {
+        Student student1 = new Student("Alice", 75);
+        Student student2 = new Student("Bob", 55);
+        Student student3 = new Student("Carol", 90);
+        Student student4 = new Student("David", 35);
+        Student student5 = new Student("Eve", 80);
+
+        System.out.println(student1.name + "'s grade: " + student1.calculateGrade());
+        System.out.println(student2.name + "'s grade: " + student2.calculateGrade());
+        System.out.println(student3.name + "'s grade: " + student3.calculateGrade());
+        System.out.println(student4.name + "'s grade: " + student4.calculateGrade());
+        System.out.println(student5.name + "'s grade: " + student5.calculateGrade());
+    }
+}
