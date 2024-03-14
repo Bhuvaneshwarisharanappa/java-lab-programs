@@ -1,0 +1,48 @@
+public class Student {
+    private String name;
+    private int rollNumber;
+    private int age;
+
+    public Student(String name, int rollNumber, int age) {
+        this.name = name;
+        this.rollNumber = rollNumber;
+        this.age = age;
+    }
+
+    // Getters and setters
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getRollNumber() {
+        return rollNumber;
+    }
+
+    public void setRollNumber(int rollNumber) {
+        this.rollNumber = rollNumber;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    // Method to display student information
+    public void display() {
+        System.out.println("Name: " + name);
+        System.out.println("Roll Number: " + rollNumber);
+        System.out.println("Age: " + age);
+    }
+
+    public static void main(String[] args) {
+        Student student = new Student("Alice", 123, 20);
+        student.display();
+    }
+}
