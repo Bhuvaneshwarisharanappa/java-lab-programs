@@ -1,0 +1,43 @@
+public class Employee {
+    // Instance variables
+    String empName;
+    int empNo;
+    float salary;
+    String empDesig;
+    byte expYrs;
+
+    // Method to set employee details
+    void setEmployee(String name, int no, float sal, String desig, byte exp) {
+        empName = name;
+        empNo = no;
+        salary = sal;
+        empDesig = desig;
+        expYrs = exp;
+    }
+
+    // Method to display employee details
+    void getEmployee() {
+        System.out.println(empName + "\t" + empNo + "\t" + empDesig + "\t" + salary + "\t" + expYrs);
+    }
+
+    // Main method for testing
+    public static void main(String[] args) {
+        // Creating an instance of Employee
+        Employee rahul = new Employee();
+
+        // Setting employee details using setEmployee method
+        rahul.setEmployee("Rahul", 138964, 9999.01f, "PM", (byte) 0);
+
+        // Displaying employee details
+        rahul.getEmployee();
+
+        // Accessing instance variables using dot operator
+        Employee rakesh = new Employee();
+        rakesh.empName = "Rakesh Batra";
+        rakesh.empNo = 7054122;
+        rakesh.salary = 9457.0f;
+        rakesh.empDesig = "Project Lead";
+        rakesh.expYrs = 2;
+        rakesh.getEmployee();
+    }
+}
