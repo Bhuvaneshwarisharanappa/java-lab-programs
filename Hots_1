@@ -1,0 +1,39 @@
+import java.util.ArrayList;
+import java.util.List;
+
+class Employee {
+    String name;
+    String gender;
+    double salary;
+
+    public Employee(String name, String gender, double salary) {
+        this.name = name;
+        this.gender = gender;
+        this.salary = salary;
+    }
+
+    public void giveBonus(double bonusPercentage) {
+        if (gender.equalsIgnoreCase("female")) {
+            double bonusAmount = salary * (bonusPercentage / 100);
+            salary += bonusAmount;
+            System.out.println(name + "'s salary after bonus: $" + salary);
+        }
+    }
+}
+
+public class WomenDayBonus {
+    public static void main(String[] args) {
+        List<Employee> employees = new ArrayList<>();
+        employees.add(new Employee("Alice", "female", 50000));
+        employees.add(new Employee("Bob", "male", 60000));
+        employees.add(new Employee("Carol", "female", 55000));
+        employees.add(new Employee("David", "male", 52000));
+        
+        double bonusPercentage = 10.0; // 10% bonus for female employees
+
+        System.out.println("Issuing bonus for female employees on International Women's Day:");
+        for (Employee emp : employees) {
+            emp.giveBonus(bonusPercentage);
+        }
+    }
+}
