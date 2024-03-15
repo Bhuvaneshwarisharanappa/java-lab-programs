@@ -1,0 +1,119 @@
+import java.util.Scanner;
+
+public class DemoSRPCalculator {
+
+    public static void main(String[] args) {
+        double result = 0;
+
+        // Reading input values
+        ReadInputValues input = new ReadInputValues();
+
+        // Switch statement to perform different operations based on the input
+        switch(input.operation) {
+            case '+':
+                result = Addition.sum(input);
+                break;
+            case '-':
+                result = Subtraction.difference(input);
+                break;
+            case '*':
+                result = Multiplication.product(input);
+                break;
+            case '/':
+                result = Division.quotient(input);
+                break;
+            case '%':
+                result = Modulus.remainder(input);
+                break;
+            default:
+                System.out.println("Enter valid choice...");
+                break;
+        }
+
+        // Printing the result
+        System.out.println("The result is: " + result);
+    }
+}
+import java.util.Scanner;
+
+class ReadInputValues {
+    double num1, num2;
+    char operation;
+
+    ReadInputValues() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter any non zero number...");
+        num1 = sc.nextDouble();
+
+        System.out.println("Enter any non zero number...");
+        num2 = sc.nextDouble();
+
+        System.out.println("Enter your choice...");
+        operation = sc.next().charAt(0);
+
+        sc.close();
+    }
+}
+
+class Addition {
+    public static double sum(ReadInputValues ip) {
+        return (ip.num1 + ip.num2);
+    }
+}
+
+public class DemoSRPCalculator {
+    public static void main(String[] args) {
+        double result = 0;
+
+        // Reading input values
+        ReadInputValues input = new ReadInputValues();
+
+        // Switch statement to perform different operations based on the input
+        switch(input.operation) {
+            case '+':
+                result = Addition.sum(input);
+                break;
+            // other cases for different operations can be added here
+            default:
+                System.out.println("Enter valid choice...");
+                break;
+        }
+
+        // Printing the result
+        System.out.println("The result is: " + result);
+    }
+}
+class Subtraction {
+    public static double difference(ReadInputValues ip) {
+        return (ip.num1 - ip.num2);
+    }
+}
+
+class Multiplication {
+    public static double product(ReadInputValues ip) {
+        return (ip.num1 * ip.num2);
+    }
+}
+
+class Division {
+    public static double quotient(ReadInputValues ip) {
+        if(ip.num2 != 0) {
+            return (ip.num1 / ip.num2);
+        } else {
+            System.out.println("Cannot divide by zero.");
+            return Double.NaN; // Return NaN (Not a Number) for division by zero
+        }
+    }
+}
+
+class Modulus {
+    public static double remainder(ReadInputValues ip) {
+        if(ip.num2 != 0) {
+            return (ip.num1 % ip.num2);
+        } else {
+            System.out.println("Cannot find remainder when dividing by zero.");
+            return Double.NaN; // Return NaN (Not a Number) for division by zero
+        }
+    }
+}
