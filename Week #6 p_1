@@ -1,0 +1,105 @@
+import java.util.Scanner;
+
+public class DemoSRPCalculator {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double result = 0;
+        
+        // Read input values
+        ReadInputValues input = new ReadInputValues();
+        
+        // Switch-case to perform operations
+        switch(input.operation) {
+            case '+':
+                result = Addition.sum(input);
+                break;
+            case '-':
+                result = Subtraction.difference(input);
+                break;
+            case '*':
+                result = Multiplication.product(input);
+                break;
+            case '/':
+                result = Division.quotient(input);
+                break;
+            case '%':
+                result = Modulus.remainder(input);
+                break;
+            default:
+                System.out.println("Enter valid choice...");
+                break;
+        }
+        
+        // Display the result
+        System.out.println("The result is: " + result);
+    }
+}
+import java.util.Scanner;
+
+class ReadInputValues {
+    double num1, num2;
+    char operation;
+
+    ReadInputValues() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter any non zero number...");
+        num1 = sc.nextDouble();
+
+        System.out.println("Enter any non zero number...");
+        num2 = sc.nextDouble();
+
+        System.out.println("Enter your choice...");
+        operation = sc.next().charAt(0);
+
+        sc.close();
+    }
+}
+
+class Addition {
+    public static double sum(ReadInputValues ip) {
+        return (ip.num1 + ip.num2);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        ReadInputValues input = new ReadInputValues();
+        double result = Addition.sum(input);
+        System.out.println("Result: " + result);
+    }
+}
+class Subtraction {
+    public static double difference(ReadInputValues ip) { 
+        return (ip.num1 - ip.num2); 
+    }
+}
+
+class Multiplication {
+    public static double product(ReadInputValues ip) { 
+        return (ip.num1 * ip.num2); 
+    }
+}
+
+class Division {
+    public static double quotient(ReadInputValues ip) { 
+        return (ip.num1 / ip.num2); 
+    }
+}
+
+class Modulus {
+    public static double remainder(ReadInputValues ip) { 
+        return (ip.num1 % ip.num2); 
+    }
+}
+
+class ReadInputValues {
+    double num1;
+    double num2;
+
+    public ReadInputValues(double num1, double num2) {
+        this.num1 = num1;
+        this.num2 = num2;
+    }
+}
