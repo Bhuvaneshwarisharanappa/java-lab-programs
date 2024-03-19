@@ -1,0 +1,14 @@
+package bonus;
+
+import emp.Employee;
+
+public class IssueBonus {
+
+    public static void issueEmployeeBonus(Employee emp) {
+        if(emp.getExpYears() > 10) {
+            emp.setSalary(emp.getSalary() * 1.15f);
+        } else {
+            emp.setSalary(emp.getSalary() * 1.05f);
+        }
+    }
+}
