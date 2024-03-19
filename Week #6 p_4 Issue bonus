@@ -1,0 +1,23 @@
+import emp.Employee;
+import bonus.IssueBonus; // Corrected package name
+
+public class DemoPackage {
+    public static void main(String[] args) {
+        System.out.println("This program illustrates the use of packages...");
+
+        Employee[] list = new Employee[5]; // Corrected array initialization
+
+        // Initialize array of objects individually
+        for (int i = 0; i < list.length; i++) { // Corrected loop condition
+            list[i] = new Employee();
+        }
+
+        System.out.println("Employee ID\tEmployee Name\tExperience Years\tSalary");
+
+        for (int i = 0; i < list.length; i++) {
+            IssueBonus.issueEmployeeBonus(list[i]);
+            list[i].getEmployee(); // Assuming getEmployee() prints employee details
+            System.out.println("...");
+        }
+    }
+}
