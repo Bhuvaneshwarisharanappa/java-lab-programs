@@ -1,0 +1,18 @@
+package issuebook; 
+import student.Student;
+import requestbook.RequestBook;
+
+public class IssueBook {
+
+    private RequestBook rb;
+
+    public IssueBook(RequestBook rb) {
+        this.rb = rb;
+    }
+
+    public void issueBook() {
+        System.out.println("Issuing the book");
+        System.out.println("Request ID: " + this.rb.getRequestID() + " being issued to " + this.rb.getStudent().getName());
+        System.out.println("Book is to be delivered to: " + this.rb.getStudent().getRegisterNo());
+    }
+}
