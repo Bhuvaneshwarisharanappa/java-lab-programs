@@ -1,0 +1,25 @@
+package student;
+
+public class Student {
+
+    private String name;
+    private String registerNo;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name; // corrected assignment operator
+    }
+
+    public String getRegisterNo() {
+        return registerNo; // corrected method name
+    }
+
+    public void setRegisterNo(String rno) {
+        this.registerNo = rno; // corrected assignment operator and method name
+    }
+
+    // Other methods of the class...
+}
