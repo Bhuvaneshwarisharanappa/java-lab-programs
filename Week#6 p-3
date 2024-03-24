@@ -1,0 +1,22 @@
+package week6;
+
+import student.Student;
+import requestbook.RequestBook;
+import issuebook.IssueBook;
+
+public class DemoSRP {
+    public static void main(String[] args) {
+        Student sony = new Student();
+        sony.setName("Sony Mathew");
+        sony.setRegisterNo("119CS201");
+
+        RequestBook rb = new RequestBook();
+        rb.setBookName("Java Programming");
+        rb.setDuration(2);
+        rb.setStudent(sony);
+        rb.searchBook();
+
+        IssueBook iborder = new IssueBook(rb);
+        iborder.issueBook();
+    }
+}
