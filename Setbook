@@ -1,0 +1,19 @@
+public void setBookName(String bookName) {
+    this.bookName = bookName;
+    setRequestID(bookName);
+}
+
+public int getDuration() {
+    return duration;
+}
+
+public void setDuration(int duration) {
+    this.duration = duration;
+}
+
+public void searchBook() {
+    System.out.println("Searching book for Student - " +
+            this.getStudent().getName() +
+            " who has requested " +
+            this.getBookName());
+}
